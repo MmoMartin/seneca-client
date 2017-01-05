@@ -1,6 +1,6 @@
 {
   "name": "seneca-client",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Encapsulation seneca client",
   "main": "index.js",
   "scripts": {
