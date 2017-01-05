@@ -1,0 +1,26 @@
+{
+  "name": "seneca-client",
+  "version": "0.0.1",
+  "description": "Encapsulation seneca client",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xunyijia/seneca-client.git"
+  },
+  "keywords": [
+    "seneca",
+    "client"
+  ],
+  "author": "FengYuHe",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xunyijia/seneca-client/issues"
+  },
+  "homepage": "https://github.com/xunyijia/seneca-client#readme",
+  "dependencies": {
+    "seneca": "^3.2.2"
+  }
+}
