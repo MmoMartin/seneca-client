@@ -9,3 +9,7 @@ a.send({module: 'test', cmd: 'run', data: {test: 'test success'}}, function (err
   console.log(err);
   console.log(result);
 });
+
+a.send({module: 'test', cmd: 'run', data: {test: 'test success'}}).then((result) => {
+  console.log('-----------', result);
+});

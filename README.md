@@ -12,7 +12,7 @@ $ npm install
 $ mocha test
 ```
 ## Client
-```json
+```js
 const Client = require('seneca-client'); 
 const exampleClient = new Client({port: 10100, host: 'localhost'});
 ```
@@ -20,13 +20,20 @@ const exampleClient = new Client({port: 10100, host: 'localhost'});
 * `host` The seneca service host
 
 ## Usage
-```json
+支持回调模式和`promise`模式
+```js
 const Client = require('seneca-client'); 
 const exampleClient = new Client({port: 10100, host: 'localhost'});
 
 exampleClient.send({module: 'test', cmd: 'run', data: {test: 'test success'}}, function (err, result) {
   console.log(err);
   console.log(result);
+});
+
+exampleClient.send({module: 'test', cmd: 'run', data: {test: 'test success'}}).then((result) => {
+  console.log(result);
+}).catch((err) => {
+  console.log(err);
 });
 ```
 * `module|service|role`

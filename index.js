@@ -30,12 +30,33 @@ class MessageBusClient {
    *  * data {Object|String} 传递数据
    * @param cb {Function} 回调
    */
-  send (obj, cb){
+   send (obj, cb){
     obj = obj || {};
     obj.role = obj.module || obj.service || obj.role || '';
     obj.cmd = obj.cmd || '';
     obj.data = obj.data || '';
-    this.senecaClient.act(obj, cb);
+    if(typeof cb === 'function'){
+      this.senecaClient.act(obj, cb);
+    }else {
+      return this._promiseAct(obj);
+    }
+  }
+
+  /**
+   * promise化acl方法
+   * @param obj
+   * @returns {Promise}
+   * @private
+   */
+  _promiseAct (obj){
+    return new Promise((resolve, reject) =>{
+      this.senecaClient.act(obj, (err, result) => {
+        if(err){
+          return reject(err);
+        }
+        return resolve(result);
+      })
+    })
   }
 }
 
