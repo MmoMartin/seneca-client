@@ -22,5 +22,9 @@
   "homepage": "https://github.com/xunyijia/seneca-client#readme",
   "dependencies": {
     "seneca": "^3.2.2"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0"
   }
 }
