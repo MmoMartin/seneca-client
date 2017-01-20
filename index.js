@@ -34,7 +34,7 @@ class MessageBusClient {
     obj = obj || {};
     obj.role = obj.module || obj.service || obj.role || '';
     obj.cmd = obj.cmd || '';
-    obj.data = obj.data || '';
+    obj.data = obj.data || {};
     if(typeof cb === 'function'){
       this.senecaClient.act(obj, cb);
     }else {

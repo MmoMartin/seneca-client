@@ -37,4 +37,12 @@ describe('service client', () => {
       done();
     });
   });
+
+  it('send method for promise and not send data', done => {
+    client.send({module: 'test', cmd: 'run'}).then((result) => {
+      expect(result.code).to.be.equal(200);
+      expect(result.data).to.be.equal(undefined);
+      done();
+    });
+  });
 });
