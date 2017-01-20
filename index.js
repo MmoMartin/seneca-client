@@ -18,7 +18,7 @@ class MessageBusClient {
     this.port = props.port;
     this.host = props.host || 'localhost';
     this.pin = props.pin || undefined;
-    this.senecaClient = seneca({log: {level: 'error+'}})
+    this.senecaClient = seneca({log: {level: 'none'}})
       .client({port: this.port, host: this.host, pin: this.pin});
   }
 
